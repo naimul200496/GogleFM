@@ -1,0 +1,25 @@
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = false;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText);
+  }
+});
+
+//setting request method
+//API endpoint for API sandbox 
+xhr.open("GET", "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_PROD_ORDER_CONFIRMATION_2_SRV/ProdnOrdConfMatlDocItm?%24inlinecount=allpages&%24top=50");
+
+
+//adding request headers
+//API Key for API Sandbox
+xhr.setRequestHeader("APIKey", "2TsJRAbwZelXAl0ivyYAGZA2xBNCaMhp");
+xhr.setRequestHeader("DataServiceVersion", "2.0");
+xhr.setRequestHeader("Accept", "application/json");
+
+
+//sending request
+xhr.send(data);
